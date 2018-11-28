@@ -1,0 +1,119 @@
+﻿const int int0=0, int1=1;
+const char ch1='a',ch2='-',ch3='1';
+const char ch4='0';
+const char _='_';
+
+int int2,int3;
+int int4[3];
+char ch5,ch6[2];
+
+int gcd(int x,int y){
+	int tmp;
+    if(y==0)
+        return (x);
+    if(x<y)
+    {
+    	tmp=x;
+    	x=y;
+    	y=tmp;
+    }
+    if(y!=0)
+    {
+    	x=x-x/y*y;
+        return (gcd(y,x));
+    }
+}
+
+void switch_check(int i)
+{
+	do
+	{
+		switch(i)
+		{
+			case 0:printf("case 0");
+			case 1:printf("case 1");
+			case 2:printf("case 2");
+		}
+		i = i+1;
+	}while(i<=2)
+}
+
+char charplus(int number)
+{
+	char c[2];
+	printf("!#$%&'()*+,-./:;<=>?@[]^_`{|}~");
+	c[0] = ch1;
+	c[1] = ch2;
+	return(c[number]);
+}
+void op_test(int x, int y)
+{
+	int z,i;
+	i = 4;
+	do
+	{
+		switch(i)
+		{
+			case 4:{
+				z=x+y;
+				printf("result of add is ",z);
+			}
+			case 3:{
+				z=x-y;
+				printf("result of sub is ",z);
+			}
+			case 2:printf("result of mul is ",x*y);
+			case 1:printf("result of div is",x/y);
+		}
+		i=i-1;
+	}while(i>INT0)
+	z=-x+y;
+	printf("-x+y=",z);
+	z=-(x+y);
+	printf("-(x+y)=",z);
+	z=-(-((-x)))-(+(-y));
+	printf("-(-((-x)))-(+(-y))=",z);
+}
+
+void main()
+{
+	int x,y,result;
+	int i;
+	char ch7;
+
+	printf("please input two numbers");
+	scanf(x,y);;;
+	result=gcd(x,y);
+	printf("least common factor is ",result);
+	printf("");
+
+	printf("switch test for int begin");
+	i = 'b'-2/(101-100)+(101-100)-ch1;
+	switch_check(i);
+
+	printf("char function begin");
+	printf(charplus(0));
+
+	printf("op check begin");
+	printf("please input two numbers");
+	scanf(int2,int3);
+	op_test(int2,int3);
+
+	printf("check int char operation");
+	scanf(ch7);
+
+	ch5 = 'A'+'b'-'a';
+	printf(ch5);
+	ch6[-0] = ch5 + '1'*2-'2'-ch4;
+	printf(ch6[0]);
+	ch6[-(-2+3)+2] = '+';
+	printf(ch6[1]);
+
+	int4[-1+1] = '1'-2;
+	printf(int4[0]);
+	int4[1] = --1+2;
+	printf(int4[1]);
+	printf(ch7);
+	
+	printf("test finished!");
+}
